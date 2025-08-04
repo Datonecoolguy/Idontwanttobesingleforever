@@ -2,66 +2,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>I Don't Want to Be Single Forever</title>
+  <title>Proposal Slides</title>
   <style>
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
-    html, body {
+    body, html {
       height: 100%;
-      width: 100%;
       font-family: sans-serif;
-      background: #111;
-      color: #fff;
-      overflow: hidden;
     }
     .slide {
       display: none;
       height: 100vh;
       width: 100vw;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
       padding: 2rem;
+      background: #111;
+      color: #fff;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      transition: opacity 0.5s ease;
+      transition: all 0.5s ease-in-out;
     }
     .slide.active {
       display: flex;
     }
-    .nav-buttons {
+    .nav-btns {
       position: absolute;
-      bottom: 20px;
-      width: 100%;
+      bottom: 2rem;
       display: flex;
-      justify-content: space-between;
-      padding: 0 2rem;
+      gap: 1rem;
     }
     button {
       background: #fff;
       color: #111;
-      border: none;
       padding: 0.5rem 1rem;
-      font-size: 1rem;
-      cursor: pointer;
+      border: none;
       border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
     }
-    img.kdm-image {
-      max-width: 80vw;
-      max-height: 50vh;
-      margin-top: 1rem;
-      border-radius: 1rem;
-      box-shadow: 0 0 10px rgba(255,255,255,0.3);
+    img {
+      max-width: 90vw;
+      max-height: 60vh;
+      margin-bottom: 1rem;
+      border-radius: 10px;
     }
     @media (max-width: 768px) {
-      h1, h2 {
-        font-size: 1.5rem;
-      }
-      button {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.9rem;
+      .slide {
+        padding: 1rem;
+        font-size: 1.2rem;
       }
     }
   </style>
@@ -71,71 +63,62 @@
     <h1>Made by Mahathir</h1>
   </div>
   <div class="slide">
-    <h2>I love KDM, Bandoeng, the traffic too</h2>
-    <img class="kdm-image" src="https://share.google/images/bEBE5rV8b0qIcj3vE" alt="KDM Picture" />
+    <img src="https://share.google/images/bEBE5rV8b0qIcj3vE" alt="KDM image">
+    <p>I love KDM, Bandoeng, the traffic too</p>
   </div>
   <div class="slide">
-    <h2>Reason 1</h2>
-    <p>Lorem ipsum dolor sit amet consectetur.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
   </div>
   <div class="slide">
-    <h2>Reason 2</h2>
-    <p>Lorem ipsum dolor sit amet consectetur.</p>
+    <p>Curabitur vel lorem id lorem facilisis placerat.</p>
   </div>
   <div class="slide">
-    <h2>Reason 3</h2>
-    <p>Lorem ipsum dolor sit amet consectetur.</p>
+    <p>Vivamus euismod justo ac tellus malesuada, at convallis felis viverra.</p>
   </div>
   <div class="slide">
-    <h2>Reason 4</h2>
-    <p>Lorem ipsum dolor sit amet consectetur.</p>
+    <p>Fusce nec justo nec nulla blandit porta.</p>
   </div>
   <div class="slide">
-    <h2>Reason 5</h2>
-    <p>Lorem ipsum dolor sit amet consectetur.</p>
+    <p>Sed non mauris nec libero sodales consequat.</p>
   </div>
   <div class="slide">
-    <h2>Why I Am Probably Worth It #1</h2>
-    <p>Lorem ipsum dolor sit amet consectetur.</p>
+    <h2>Why I'm probably worth it</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
   </div>
   <div class="slide">
-    <h2>Why I Am Probably Worth It #2</h2>
-    <p>Lorem ipsum dolor sit amet consectetur.</p>
+    <p>Curabitur vel lorem id lorem facilisis placerat.</p>
   </div>
   <div class="slide">
-    <h2>Why I Am Probably Worth It #3</h2>
-    <p>Lorem ipsum dolor sit amet consectetur.</p>
+    <p>Vivamus euismod justo ac tellus malesuada, at convallis felis viverra.</p>
   </div>
   <div class="slide">
-    <h2>Why I Am Probably Worth It #4</h2>
-    <p>Lorem ipsum dolor sit amet consectetur.</p>
+    <p>Fusce nec justo nec nulla blandit porta.</p>
   </div>
   <div class="slide">
-    <h2>Why I Am Probably Worth It #5</h2>
-    <p>Lorem ipsum dolor sit amet consectetur.</p>
+    <p>Sed non mauris nec libero sodales consequat.</p>
   </div>
-  <div class="nav-buttons">
-    <button onclick="prevSlide()">← Prev</button>
-    <button onclick="nextSlide()">Next →</button>
+  <div class="nav-btns">
+    <button onclick="prevSlide()">Prev</button>
+    <button onclick="nextSlide()">Next</button>
   </div>  <script>
-    const slides = document.querySelectorAll(".slide");
-    let currentSlide = 0;
+    let current = 0;
+    const slides = document.querySelectorAll('.slide');
 
     function showSlide(index) {
       slides.forEach((slide, i) => {
-        slide.classList.remove("active");
+        slide.classList.remove('active');
+        if (i === index) slide.classList.add('active');
       });
-      slides[index].classList.add("active");
     }
 
     function nextSlide() {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
+      current = (current + 1) % slides.length;
+      showSlide(current);
     }
 
     function prevSlide() {
-      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      showSlide(currentSlide);
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
     }
   </script></body>
 </html>
