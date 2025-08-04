@@ -1,124 +1,115 @@
-<!DOCTYPE html><html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Proposal Slides</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body, html {
-      height: 100%;
-      font-family: sans-serif;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+    body { background-color: #FFC0CB; overflow-x: hidden; }
     .slide {
-      display: none;
       height: 100vh;
       width: 100vw;
-      padding: 2rem;
-      background: #111;
-      color: #fff;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      transition: all 0.5s ease-in-out;
-    }
-    .slide.active {
       display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      transition: all 0.5s ease-in-out;
+      text-align: center;
     }
-    .nav-btns {
-      position: absolute;
-      bottom: 2rem;
+    .slide h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    .slide p {
+      font-size: 1.25rem;
+      max-width: 600px;
+      color: #555;
+    }
+    .nav {
+      position: fixed;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
       display: flex;
       gap: 1rem;
     }
-    button {
-      background: #fff;
-      color: #111;
-      padding: 0.5rem 1rem;
+    .nav button {
+      background: #222;
+      color: white;
       border: none;
-      border-radius: 5px;
-      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
       cursor: pointer;
     }
-    img {
-      max-width: 90vw;
-      max-height: 60vh;
-      margin-bottom: 1rem;
-      border-radius: 10px;
+    .nav button:hover {
+      background: #444;
+    }
+    img.kdm-img {
+      width: 80%;
+      max-width: 400px;
+      margin-top: 1rem;
+      border-radius: 12px;
     }
     @media (max-width: 768px) {
-      .slide {
-        padding: 1rem;
-        font-size: 1.2rem;
-      }
+      .slide h1 { font-size: 2rem; }
+      .slide p { font-size: 1rem; }
     }
   </style>
 </head>
 <body>
-  <div class="slide active">
-    <h1>Made by Mahathir</h1>
-  </div>
-  <div class="slide">
-    <img src="https://share.google/images/bEBE5rV8b0qIcj3vE" alt="KDM image">
+  <div class="slide" id="slide0">
+    <h1>Top 10 reason on why i need to date and why im <br> probably worth accepting</h1>
+  </div>  <div class="slide" id="slide1">
+    <h1>Reason #1 I like you</h1>
+    <p>You're cute</p>
+  </div>  <div class="slide" id="slide2">
+    <h1>Reason #2 I like you</h1>
+    <p>You have great personality (though we haven’t talked for at least 2 days)</p>
+  </div>  <div class="slide" id="slide3">
+    <h1>Reason #1 why I'm probably worth it</h1>
+    <p>I'm handsome (my grandma said so)</p>
+  </div>  <div class="slide" id="slide4">
+    <h1>Reason #2 why I'm probably worth it</h1>
+    <p>I do sport such as basketball and badminton</p>
+  </div>  <div class="slide" id="slide5">
+    <h1>Reason #3 why I'm probably worth it</h1>
     <p>I love KDM, Bandoeng, the traffic too</p>
-  </div>
-  <div class="slide">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  </div>
-  <div class="slide">
-    <p>Curabitur vel lorem id lorem facilisis placerat.</p>
-  </div>
-  <div class="slide">
-    <p>Vivamus euismod justo ac tellus malesuada, at convallis felis viverra.</p>
-  </div>
-  <div class="slide">
-    <p>Fusce nec justo nec nulla blandit porta.</p>
-  </div>
-  <div class="slide">
-    <p>Sed non mauris nec libero sodales consequat.</p>
-  </div>
-  <div class="slide">
-    <h2>Why I'm probably worth it</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  </div>
-  <div class="slide">
-    <p>Curabitur vel lorem id lorem facilisis placerat.</p>
-  </div>
-  <div class="slide">
-    <p>Vivamus euismod justo ac tellus malesuada, at convallis felis viverra.</p>
-  </div>
-  <div class="slide">
-    <p>Fusce nec justo nec nulla blandit porta.</p>
-  </div>
-  <div class="slide">
-    <p>Sed non mauris nec libero sodales consequat.</p>
-  </div>
-  <div class="nav-btns">
+    <img src="https://share.google/images/bEBE5rV8b0qIcj3vE" 
+  </div>  <div class="slide" id="slide6">
+    <h1>Reason #4 why I'm probably worth it</h1>
+    <p>I'm a good boy</p>
+  </div>  <div class="slide" id="slide7">
+    <h1>Reason #5 why I'm probably worth it</h1>
+    <p>I'm not gay, so I do lik female</p>
+  </div>  <div class="slide" id="slide8">
+    <h1>Yes</h1>
+  </div>  <div class="nav">
     <button onclick="prevSlide()">Prev</button>
     <button onclick="nextSlide()">Next</button>
   </div>  <script>
-    let current = 0;
+    let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
 
     function showSlide(index) {
       slides.forEach((slide, i) => {
-        slide.classList.remove('active');
-        if (i === index) slide.classList.add('active');
+        slide.style.display = i === index ? 'flex' : 'none';
       });
     }
 
     function nextSlide() {
-      current = (current + 1) % slides.length;
-      showSlide(current);
+      if (currentSlide < slides.length - 1) {
+        currentSlide++;
+        showSlide(currentSlide);
+      }
     }
 
     function prevSlide() {
-      current = (current - 1 + slides.length) % slides.length;
-      showSlide(current);
+      if (currentSlide > 0) {
+        currentSlide--;
+        showSlide(currentSlide);
+      }
     }
+
+    showSlide(currentSlide);
   </script></body>
 </html>
