@@ -1,117 +1,141 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html><html lang="en">
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I Don't Want to Be Single Forever</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
-    body { background-color: #FFC0CB; overflow-x: hidden; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      width: 100%;
+      font-family: sans-serif;
+      background: #111;
+      color: #fff;
+      overflow: hidden;
+    }
     .slide {
+      display: none;
       height: 100vh;
       width: 100vw;
-      display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
       padding: 2rem;
-      transition: all 0.5s ease-in-out;
       text-align: center;
+      transition: opacity 0.5s ease;
     }
-    .slide h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: #333;
-    }
-    .slide p {
-      font-size: 1.25rem;
-      max-width: 600px;
-      color: #555;
-    }
-    .nav {
-      position: fixed;
-      bottom: 1rem;
-      left: 50%;
-      transform: translateX(-50%);
+    .slide.active {
       display: flex;
-      gap: 1rem;
     }
-    .nav button {
-      background: #222;
-      color: white;
+    .nav-buttons {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 2rem;
+    }
+    button {
+      background: #fff;
+      color: #111;
       border: none;
       padding: 0.5rem 1rem;
-      border-radius: 8px;
+      font-size: 1rem;
       cursor: pointer;
+      border-radius: 5px;
     }
-    .nav button:hover {
-      background: #444;
-    }
-    img.kdm-img {
-      width: 80%;
-      max-width: 400px;
+    img.kdm-image {
+      max-width: 80vw;
+      max-height: 50vh;
       margin-top: 1rem;
-      border-radius: 12px;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px rgba(255,255,255,0.3);
     }
     @media (max-width: 768px) {
-      .slide h1 { font-size: 2rem; }
-      .slide p { font-size: 1rem; }
+      h1, h2 {
+        font-size: 1.5rem;
+      }
+      button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="slide" id="slide0">
-    <h1>Top 10 reason on why i need to date and why im <br> probably worth accepting</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida.</p>
-  </div>  <div class="slide" id="slide1">
-    <h1>Reason #1 I like you</h1>
-    <p>You're cute</p>
-  </div>  <div class="slide" id="slide2">
-    <h1>Reason #2 I like you</h1>
-    <p>You have great personality (though we haven’t talked for at least 2 days)</p>
-  </div>  <div class="slide" id="slide3">
-    <h1>Reason #1 why I'm probably worth it</h1>
-    <p>I'm handsome (my grandma said so)</p>
-  </div>  <div class="slide" id="slide4">
-    <h1>Reason #2 why I'm probably worth it</h1>
-    <p>I do sport such as basketball and badminton</p>
-  </div>  <div class="slide" id="slide5">
-    <h1>Reason #3 why I'm probably worth it</h1>
-    <p>I love KDM, Bandoeng, the traffic too</p>
-    <img src="https://share.google/images/bEBE5rV8b0qIcj3vE" alt="KDM gif" class="kdm-img">
-  </div>  <div class="slide" id="slide6">
-    <h1>Reason #4 why I'm probably worth it</h1>
-    <p>I'm a good boy</p>
-  </div>  <div class="slide" id="slide7">
-    <h1>Reason #5 why I'm probably worth it</h1>
-    <p>I'm not gay, so I do lik female</p>
-  </div>  <div class="slide" id="slide8">
-    <h1>Yes</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vehicula dapibus libero, in fermentum elit tincidunt sed.</p>
-  </div>  <div class="nav">
-    <button onclick="prevSlide()">Prev</button>
-    <button onclick="nextSlide()">Next</button>
+  <div class="slide active">
+    <h1>Made by Mahathir</h1>
+  </div>
+  <div class="slide">
+    <h2>I love KDM, Bandoeng, the traffic too</h2>
+    <img class="kdm-image" src="https://share.google/images/bEBE5rV8b0qIcj3vE" alt="KDM Picture" />
+  </div>
+  <div class="slide">
+    <h2>Reason 1</h2>
+    <p>Lorem ipsum dolor sit amet consectetur.</p>
+  </div>
+  <div class="slide">
+    <h2>Reason 2</h2>
+    <p>Lorem ipsum dolor sit amet consectetur.</p>
+  </div>
+  <div class="slide">
+    <h2>Reason 3</h2>
+    <p>Lorem ipsum dolor sit amet consectetur.</p>
+  </div>
+  <div class="slide">
+    <h2>Reason 4</h2>
+    <p>Lorem ipsum dolor sit amet consectetur.</p>
+  </div>
+  <div class="slide">
+    <h2>Reason 5</h2>
+    <p>Lorem ipsum dolor sit amet consectetur.</p>
+  </div>
+  <div class="slide">
+    <h2>Why I Am Probably Worth It #1</h2>
+    <p>Lorem ipsum dolor sit amet consectetur.</p>
+  </div>
+  <div class="slide">
+    <h2>Why I Am Probably Worth It #2</h2>
+    <p>Lorem ipsum dolor sit amet consectetur.</p>
+  </div>
+  <div class="slide">
+    <h2>Why I Am Probably Worth It #3</h2>
+    <p>Lorem ipsum dolor sit amet consectetur.</p>
+  </div>
+  <div class="slide">
+    <h2>Why I Am Probably Worth It #4</h2>
+    <p>Lorem ipsum dolor sit amet consectetur.</p>
+  </div>
+  <div class="slide">
+    <h2>Why I Am Probably Worth It #5</h2>
+    <p>Lorem ipsum dolor sit amet consectetur.</p>
+  </div>
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">← Prev</button>
+    <button onclick="nextSlide()">Next →</button>
   </div>  <script>
+    const slides = document.querySelectorAll(".slide");
     let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
 
     function showSlide(index) {
       slides.forEach((slide, i) => {
-        slide.style.display = i === index ? 'flex' : 'none';
+        slide.classList.remove("active");
       });
+      slides[index].classList.add("active");
     }
 
     function nextSlide() {
-      if (currentSlide < slides.length - 1) {
-        currentSlide++;
-        showSlide(currentSlide);
-      }
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
     }
 
     function prevSlide() {
-      if (currentSlide > 0) {
-        currentSlide--;
-        showSlide(currentSlide);
-      }
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
     }
-
-    showSlide(currentSlide);
   </script></body>
 </html>
