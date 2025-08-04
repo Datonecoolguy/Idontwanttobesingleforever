@@ -40,23 +40,11 @@
       color: #555;
     }
 
-    .nav, .next-in-slide {
-      position: fixed;
-      bottom: 1rem;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 1rem;
-      z-index: 1000;
-    }
-
     .next-in-slide {
-      position: static;
-      transform: none;
       margin-top: 2rem;
     }
 
-    .nav button, .next-in-slide button {
+    .next-in-slide button {
       background: #222;
       color: white;
       border: none;
@@ -65,7 +53,7 @@
       cursor: pointer;
     }
 
-    .nav button:hover, .next-in-slide button:hover {
+    .next-in-slide button:hover {
       background: #444;
     }
 
@@ -136,11 +124,6 @@
     <h1>Yes</h1>
   </div>
 
-  <div class="nav">
-    <button onclick="prevSlide()">Prev</button>
-    <button onclick="nextSlide()">Next</button>
-  </div>
-
   <script>
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
@@ -154,13 +137,6 @@
     function nextSlide() {
       if (currentSlide < slides.length - 1) {
         currentSlide++;
-        showSlide(currentSlide);
-      }
-    }
-
-    function prevSlide() {
-      if (currentSlide > 0) {
-        currentSlide--;
         showSlide(currentSlide);
       }
     }
