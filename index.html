@@ -1,9 +1,21 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=1.0, user-scalable=no" />
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
-    body { background-color: #FFC0CB; overflow-x: hidden; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #FFC0CB;
+      overflow-x: hidden;
+    }
+
     .slide {
       height: 100vh;
       width: 100vw;
@@ -15,25 +27,36 @@
       transition: all 0.5s ease-in-out;
       text-align: center;
     }
+
     .slide h1 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
       color: #333;
     }
+
     .slide p {
       font-size: 1.25rem;
       max-width: 600px;
       color: #555;
     }
-    .nav {
+
+    .nav, .next-in-slide {
       position: fixed;
       bottom: 1rem;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
       gap: 1rem;
+      z-index: 1000;
     }
-    .nav button {
+
+    .next-in-slide {
+      position: static;
+      transform: none;
+      margin-top: 2rem;
+    }
+
+    .nav button, .next-in-slide button {
       background: #222;
       color: white;
       border: none;
@@ -41,15 +64,18 @@
       border-radius: 8px;
       cursor: pointer;
     }
-    .nav button:hover {
+
+    .nav button:hover, .next-in-slide button:hover {
       background: #444;
     }
+
     img.kdm-img {
       width: 80%;
       max-width: 400px;
       margin-top: 1rem;
       border-radius: 12px;
     }
+
     @media (max-width: 768px) {
       .slide h1 { font-size: 2rem; }
       .slide p { font-size: 1rem; }
@@ -57,36 +83,65 @@
   </style>
 </head>
 <body>
+
   <div class="slide" id="slide0">
     <h1>Top 10 reason on why i need to date and why im <br> probably worth accepting</h1>
-  </div>  <div class="slide" id="slide1">
+    <div class="next-in-slide"><button onclick="nextSlide()">Next</button></div>
+  </div>
+
+  <div class="slide" id="slide1">
     <h1>Reason #1 I like you</h1>
     <p>You're cute</p>
-  </div>  <div class="slide" id="slide2">
+    <div class="next-in-slide"><button onclick="nextSlide()">Next</button></div>
+  </div>
+
+  <div class="slide" id="slide2">
     <h1>Reason #2 I like you</h1>
     <p>You have great personality (though we haven’t talked for at least 2 days)</p>
-  </div>  <div class="slide" id="slide3">
+    <div class="next-in-slide"><button onclick="nextSlide()">Next</button></div>
+  </div>
+
+  <div class="slide" id="slide3">
     <h1>Reason #1 why I'm probably worth it</h1>
     <p>I'm handsome (my grandma said so)</p>
-  </div>  <div class="slide" id="slide4">
+    <div class="next-in-slide"><button onclick="nextSlide()">Next</button></div>
+  </div>
+
+  <div class="slide" id="slide4">
     <h1>Reason #2 why I'm probably worth it</h1>
     <p>I do sport such as basketball and badminton</p>
-  </div>  <div class="slide" id="slide5">
+    <div class="next-in-slide"><button onclick="nextSlide()">Next</button></div>
+  </div>
+
+  <div class="slide" id="slide5">
     <h1>Reason #3 why I'm probably worth it</h1>
     <p>I love KDM, Bandoeng, the traffic too</p>
-    <img src="https://share.google/images/bEBE5rV8b0qIcj3vE" 
-  </div>  <div class="slide" id="slide6">
+    <img src="https://share.google/images/bEBE5rV8b0qIcj3vE" class="kdm-img" />
+    <div class="next-in-slide"><button onclick="nextSlide()">Next</button></div>
+  </div>
+
+  <div class="slide" id="slide6">
     <h1>Reason #4 why I'm probably worth it</h1>
     <p>I'm a good boy</p>
-  </div>  <div class="slide" id="slide7">
+    <div class="next-in-slide"><button onclick="nextSlide()">Next</button></div>
+  </div>
+
+  <div class="slide" id="slide7">
     <h1>Reason #5 why I'm probably worth it</h1>
     <p>I'm not gay, so I do lik female</p>
-  </div>  <div class="slide" id="slide8">
+    <div class="next-in-slide"><button onclick="nextSlide()">Next</button></div>
+  </div>
+
+  <div class="slide" id="slide8">
     <h1>Yes</h1>
-  </div>  <div class="nav">
+  </div>
+
+  <div class="nav">
     <button onclick="prevSlide()">Prev</button>
     <button onclick="nextSlide()">Next</button>
-  </div>  <script>
+  </div>
+
+  <script>
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
 
@@ -111,5 +166,7 @@
     }
 
     showSlide(currentSlide);
-  </script></body>
+  </script>
+
+</body>
 </html>
