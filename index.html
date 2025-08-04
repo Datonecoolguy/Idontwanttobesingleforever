@@ -1,5 +1,4 @@
-<!DOCTYPE html><html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
@@ -14,6 +13,7 @@
       align-items: center;
       padding: 2rem;
       transition: all 0.5s ease-in-out;
+      text-align: center;
     }
     .slide h1 {
       font-size: 2.5rem;
@@ -23,7 +23,6 @@
     .slide p {
       font-size: 1.25rem;
       max-width: 600px;
-      text-align: center;
       color: #555;
     }
     .nav {
@@ -45,62 +44,51 @@
     .nav button:hover {
       background: #444;
     }
+    img.kdm-img {
+      width: 80%;
+      max-width: 400px;
+      margin-top: 1rem;
+      border-radius: 12px;
+    }
+    @media (max-width: 768px) {
+      .slide h1 { font-size: 2rem; }
+      .slide p { font-size: 1rem; }
+    }
   </style>
 </head>
 <body>
   <div class="slide" id="slide0">
     <h1>Top 10 reason on why i need to date and why im <br> probably worth accepting</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida.</p>
-  </div>
-  <div class="slide" id="slide1">
+  </div>  <div class="slide" id="slide1">
     <h1>Reason #1 I like you</h1>
-    <p>You’re cute</p>
-  </div>
-  <div class="slide" id="slide2">
+    <p>You're cute</p>
+  </div>  <div class="slide" id="slide2">
     <h1>Reason #2 I like you</h1>
     <p>You have great personality (though we haven’t talked for at least 2 days)</p>
-  </div>
-  <div class="slide" id="slide3">
-    <h1>Reason #3 I like you</h1>
-    <p>You have a calming vibe that I lowkey need in life</p>
-  </div>
-  <div class="slide" id="slide4">
-    <h1>Reason #4 I like you</h1>
-    <p>You feel different, in a good way — not like the rest</p>
-  </div>
-  <div class="slide" id="slide5">
-    <h1>Reason #5 I like you</h1>
-    <p>I’m genuinely happy talking to you — even when we barely say anything</p>
-  </div>
-  <div class="slide" id="slide6">
+  </div>  <div class="slide" id="slide3">
     <h1>Reason #1 why I'm probably worth it</h1>
     <p>I'm handsome (my grandma said so)</p>
-  </div>
-  <div class="slide" id="slide7">
+  </div>  <div class="slide" id="slide4">
     <h1>Reason #2 why I'm probably worth it</h1>
-    <p>I do sports like basketball and badminton</p>
-  </div>
-  <div class="slide" id="slide8">
+    <p>I do sport such as basketball and badminton</p>
+  </div>  <div class="slide" id="slide5">
     <h1>Reason #3 why I'm probably worth it</h1>
-    <p>I love KDM <a href="https://share.google/images/bEBE5rV8b0qIcj3vE" target="_blank">[Click for proof]</a></p>
-  </div>
-  <div class="slide" id="slide9">
+    <p>I love KDM, Bandoeng, the traffic too</p>
+    <img src="https://share.google/images/bEBE5rV8b0qIcj3vE" alt="KDM gif" class="kdm-img">
+  </div>  <div class="slide" id="slide6">
     <h1>Reason #4 why I'm probably worth it</h1>
     <p>I'm a good boy</p>
-  </div>
-  <div class="slide" id="slide10">
+  </div>  <div class="slide" id="slide7">
     <h1>Reason #5 why I'm probably worth it</h1>
-    <p>I'm not gay, so I do like female</p>
-  </div>
-  <div class="slide" id="slide11">
+    <p>I'm not gay, so I do lik female</p>
+  </div>  <div class="slide" id="slide8">
     <h1>Yes</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vehicula dapibus libero, in fermentum elit tincidunt sed.</p>
-  </div>
-  <div class="nav">
+  </div>  <div class="nav">
     <button onclick="prevSlide()">Prev</button>
     <button onclick="nextSlide()">Next</button>
-  </div>
-  <script>
+  </div>  <script>
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
 
@@ -125,6 +113,5 @@
     }
 
     showSlide(currentSlide);
-  </script>
-</body>
+  </script></body>
 </html>
